@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Mahasiswa</title>
+    <!--
+        Nama : Aby Hakim Al Yasiry Faozi
+        NIM  : 2311102208
+    -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #ffffff;
+        }
+
+        h2 {
+            font-weight: bold;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 6px 10px;
+            vertical-align: top;
+        }
+
+        input[type="text"] {
+            width: 200px;
+        }
+
+        input[type="date"] {
+            width: 150px;
+        }
+
+        textarea {
+            width: 250px;
+            height: 80px;
+        }
+
+        select {
+            width: 160px;
+        }
+
+        .btn-group {
+            padding-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Data Mahasiswa</h2>
+    <p><b>Nama :</b> Aby Hakim Al Yasiry Faozi | <b>NIM :</b> 2311102208</p>
+    <hr>
+
+    <form>
+        <table>
+            <tr>
+                <td><label for="nim"><b>NIM :</b></label></td>
+                <td><input type="text" name="nim" id="nim"></td>
+            </tr>
+            <tr>
+                <td><label for="nama"><b>Nama :</b></label></td>
+                <td><input type="text" name="nama" id="nama"></td>
+            </tr>
+            <tr>
+                <td><label for="tgl_lahir"><b>Tgl Lahir (dd-mm-yyyy) :</b></label></td>
+                <td><input type="date" name="tgl_lahir" id="tgl_lahir"></td>
+            </tr>
+            <tr>
+                <td><b>Jenis Kelamin :</b></td>
+                <td>
+                    <input type="radio" name="jenis_kelamin" id="laki" value="Laki-Laki">
+                    <label for="laki">Laki-Laki</label>
+                    <input type="radio" name="jenis_kelamin" id="perempuan" value="Perempuan">
+                    <label for="perempuan">Perempuan</label>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="alamat"><b>Alamat di Purwokerto :</b></label></td>
+                <td><textarea name="alamat" id="alamat"></textarea></td>
+            </tr>
+            <tr>
+                <td><label for="tinggal_di"><b>Tinggal di :</b></label></td>
+                <td>
+                    <select name="tinggal_di" id="tinggal_di">
+                        <option value="">--pilih--</option>
+                        <option value="Kos/kontrakan">Kos/kontrakan</option>
+                        <option value="Rumah saudara">Rumah saudara</option>
+                        <option value="Rumah orang tua">Rumah orang tua</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><b>Pilih 2 hobi yang paling disukai :</b></td>
+                <td>
+                    <input type="checkbox" name="hobi" id="science" value="Science">
+                    <label for="science">Science</label><br>
+                    <input type="checkbox" name="hobi" id="technology" value="Technology">
+                    <label for="technology">Technology</label><br>
+                    <input type="checkbox" name="hobi" id="art" value="Art">
+                    <label for="art">Art</label><br>
+                    <input type="checkbox" name="hobi" id="sport" value="Sport">
+                    <label for="sport">Sport</label>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="btn-group">
+                    <input type="submit" value="Submit">
+                    <input type="reset" value="Reset">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+
+</html>

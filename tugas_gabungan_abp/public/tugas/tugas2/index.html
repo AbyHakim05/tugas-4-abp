@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 1</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="logo-header">
+        <span class="logo-online">MEDIA</span> <span class="logo-media">ONLINE</span>
+    </header>
+
+    <nav class="navbar navbar-expand navbar-dark nav-blue">
+        <div class="container-fluid justify-content-center">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="#">HOME</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">STRATEGY</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">SOLUSI</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">MARKETING</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">WORKSHOP</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">OUR WORK</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">PRODUK</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">PARTNER</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">INSPIRASI</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">FAQ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-10 col-md-6 col-lg-4">
+                    <div class="row g-0 text-center text-white">
+                        <div class="col-6">
+                            <div
+                                class="bg-success py-5 h-100 d-flex flex-column align-items-center justify-content-center">
+                                <i class="fas fa-chart-pie fa-3x mb-2"></i>
+                                <span class="fw-bold">Analytic</span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="bg-warning py-5 h-100 d-flex flex-column align-items-center justify-content-center"
+                                style="color: white !important;">
+                                <i class="fas fa-temperature-high fa-3x mb-2"></i>
+                                <span class="fw-bold">Creative</span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div
+                                class="bg-danger py-5 h-100 d-flex flex-column align-items-center justify-content-center">
+                                <i class="fas fa-desktop fa-3x mb-2"></i>
+                                <span class="fw-bold">Development</span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div
+                                class="bg-info py-5 h-100 d-flex flex-column align-items-center justify-content-center">
+                                <i class="fas fa-cogs fa-3x mb-2"></i>
+                                <span class="fw-bold">Marketing</span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="bg-warning py-5 h-100 d-flex flex-column align-items-center justify-content-center"
+                                style="color: white !important;">
+                                <i class="fas fa-play-circle fa-3x mb-2"></i>
+                                <span class="fw-bold">Media</span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div
+                                class="bg-success py-5 h-100 d-flex flex-column align-items-center justify-content-center">
+                                <i class="fas fa-rocket fa-3x mb-2"></i>
+                                <span class="fw-bold">Optimisation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="exercise-section">
+        <div class="container">
+
+            <div class="exercise-box">
+                <h4>1. Hitung Jumlah Bilangan Ganjil</h4>
+                <p>Masukkan nilai min dan max untuk menghitung jumlah bilangan ganjil dalam rentang tersebut.</p>
+                <div class="input-group-custom">
+                    <label for="minVal">Min:</label>
+                    <input type="number" id="minVal" value="1" />
+                    <label for="maxVal">Max:</label>
+                    <input type="number" id="maxVal" value="8" />
+                    <button id="btnHitung" class="btn-exercise btn-calc" onclick="hitungGanjil()">Hitung</button>
+                </div>
+                <div id="hasilGanjil" class="result-box"></div>
+            </div>
+
+            <div class="exercise-box">
+                <h4>2. Tombol Interaktif</h4>
+
+                <div class="interactive-area" id="textArea">
+                    <p id="sampleText">Ini adalah contoh teks yang akan berubah alignment-nya ketika tombol diklik.</p>
+                </div>
+
+                <div class="button-group">
+                    <button id="btnAlign" class="btn-exercise btn-align" onclick="toggleAlignment()">Ubah Alignment
+                        Teks</button>
+                    <button id="btnColor" class="btn-exercise btn-color" onclick="toggleColor()">Ubah Warna
+                        Background</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-info">
+        <p>NAMA: Aby Hakim Al Yasiry Faozi | NIM: 2311102208</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function hitungGanjil() {
+            let min = parseInt(document.getElementById('minVal').value);
+            let max = parseInt(document.getElementById('maxVal').value);
+
+            if (isNaN(min) || isNaN(max)) {
+                document.getElementById('hasilGanjil').innerHTML = '<span class="error">Masukkan angka yang valid!</span>';
+                return;
+            }
+
+            if (min > max) {
+                document.getElementById('hasilGanjil').innerHTML = '<span class="error">Nilai min harus lebih kecil dari max!</span>';
+                return;
+            }
+
+            let jumlah = 0;
+            let bilanganGanjil = [];
+
+            for (let i = min; i <= max; i++) {
+                if (i % 2 !== 0) {
+                    jumlah += i;
+                    bilanganGanjil.push(i);
+                }
+            }
+
+            let detail = bilanganGanjil.join(' + ');
+            document.getElementById('hasilGanjil').innerHTML =
+                '<strong>Bilangan ganjil:</strong> ' + detail +
+                '<br><strong>Hasil:</strong> ' + jumlah;
+        }
+
+        let alignmentState = 0;
+        let alignments = ['left', 'center', 'right'];
+
+        function toggleAlignment() {
+            alignmentState = (alignmentState + 1) % alignments.length;
+            let textArea = document.getElementById('textArea');
+            textArea.style.textAlign = alignments[alignmentState];
+            document.getElementById('btnAlign').textContent =
+                'Alignment: ' + alignments[alignmentState].toUpperCase();
+        }
+
+        let colorChanged = false;
+        let warnaSemula = '';
+
+        function toggleColor() {
+            let box = document.getElementById('textArea');
+
+            if (!colorChanged) {
+                warnaSemula = box.style.backgroundColor || '#f9f9f9';
+                box.style.backgroundColor = '#9b59b6';
+                box.style.color = '#ffffff';
+                document.getElementById('btnColor').textContent = 'Kembalikan Warna';
+                colorChanged = true;
+            } else {
+                box.style.backgroundColor = warnaSemula;
+                box.style.color = '';
+                document.getElementById('btnColor').textContent = 'Ubah Warna Background';
+                colorChanged = false;
+            }
+        }
+    </script>
+</body>
+
+</html>
